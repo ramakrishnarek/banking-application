@@ -1,0 +1,12 @@
+
+<h3>{{title}}</h3>
+<nav>
+  <a routerLink="/newreg" routerLinkActive="active"> New Signup   |  </a>
+  <a routerLink="/admin" routerLinkActive="active">  Admin | </a>
+  <a routerLink="/login" routerLinkActive="active" *ngIf="!authService.isLoggedIn">  Login | </a>
+  <a routerLink="/login" routerLinkActive="active" *ngIf="authService.isLoggedIn">  Logout | </a>
+  <a routerLink="/dashboard" routerLinkActive="active"> Users List  |  </a>
+  <a routerLink="/emps" routerLinkActive="active"> Manage Users   </a>
+</nav>
+<hr>
+<router-outlet></router-outlet>

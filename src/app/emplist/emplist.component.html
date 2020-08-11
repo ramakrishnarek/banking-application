@@ -1,0 +1,11 @@
+
+<p><strong>Employees List</strong></p>
+
+<ul >
+  <li *ngFor="let emp of emps">
+      <a routerLink="/detail/{{emp.id}}">
+        <span > {{emp.name}}</span>
+      </a>
+  </li>
+</ul>
+<!-- <app-empdetail [emp]="selectedEmp"></app-empdetail> -->

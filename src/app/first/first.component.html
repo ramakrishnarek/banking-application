@@ -1,0 +1,37 @@
+<h1>{{title}}</h1>
+
+My List items<br>
+<ul>
+    <li *ngFor="let course of courses">{{course | uppercase}}</li>
+</ul>
+
+<br>
+<!-- Name : <input  [value] = "name" placeholder="Please enter your name"> -->
+<br>My Name is showing here two ways binding: {{name | titlecase}}
+<br>
+Name : <input [(ngModel)]="name" placeholder="name"/>
+
+<br><br>
+<button (click)="ClickMe()">Toogle button</button>
+<br>
+<div [ngClass]="status ? 'success' : 'danger'">{{myMessage}}</div>
+<br><br>
+<strong>Interaction between component</strong>
+
+<div>{{message}}</div>
+<app-first-child [parentData]="name" (childEvent)="message=$event"></app-first-child>
+
+<br><hr>
+<h5><strong>Service Example</strong></h5>
+<button (click)="showServiceInfo()">Service Info</button>
+
+<br>
+<h4>Users</h4>
+
+<ul *ngIf="userData">
+  <li *ngFor="let user of userData.data">
+    <!-- <img [src]="user.avatar" width="50"> -->
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+  </li>
+</ul>
+
